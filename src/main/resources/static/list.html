@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sequelizer</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/font-awesome-animation.min.css" rel="stylesheet">
+<link href="css/sequelizer.css" rel="stylesheet">
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<h3>Sequelizer</h3>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div id="page-wrapper">
+					<div class="row">
+						<div class="panel panel-primary">
+							<div class="panel-body">
+								<div class="add">
+									<a href="upsert.html" title="Add"><i
+										class="overline fa fa-plus-circle fa-5x btn btn-xl"></i></a>
+								</div>
+								<table class="table table-responsive">
+									<thead>
+										<th class="col-lg-2">Name</th>
+										<th class="col-lg-1">Db Name</th>
+										<th class="col-lg-4">CSV Name</th>
+										<th class="col-lg-1">Project</th>
+										<th class="col-lg-2">Last Execution</th>
+										<th class="col-lg-2">Actions</th>
+										<tr id="model_row" class="hidden">
+											<td id="name"></td>
+											<td id="dbName"></td>
+											<td id="csvName"></td>
+											<td id="project"></td>
+											<td><span id="lastExecutionDate"></span></td>
+											<td><a href="#" id="count-link" title="count"><i
+													class="fa fa-check-square-o"></i></a>&nbsp;&nbsp;<a href="#"
+												id="execute-link" title="execute"><i
+													class="fa fa-play-circle-o"></i></a>&nbsp;&nbsp;<a href="#"
+												id="download-link" download title="download csv"><i
+													class="fa fa-download"></i></a>&nbsp;&nbsp;<a id="edit-link"
+												title="Edit"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;<a
+												href="#" id="delete-link" title="Delete"><i
+													class="fa fa-trash"></i></a></td>
+										</tr>
+									</thead>
+									<tbody id="table_list">
+
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-center"></div>
+			</div>
+		</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/sequelizer.js"></script>
+	<script src="js/jobs.js"></script>
+	<script>
+		initList("sqlJobs", addRow);
+	</script>
+</body>
+
+</html>

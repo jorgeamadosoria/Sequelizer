@@ -1,0 +1,85 @@
+#page-wrapper {
+	padding: 50px 10px 10px 10px;
+	background-color: #fff;
+}
+
+#page-wrapper table {
+	margin-top: 20px;
+}
+
+.icon {
+	font-size: 5em;
+	margin: 2px;
+}
+
+.huge {
+	font-size: 3em;
+}
+
+.logo {
+	height: 100%
+}
+
+.add {
+	position: absolute;
+	margin-top: -58px;
+	left: 20px;
+	background-color: #fff;
+}
+
+.filter {
+	margin-right: 5px;
+	margin-bottom: 5px;
+	display: inline-block;
+	padding: 5px;
+}
+
+.filter a {
+	color: white;
+}
+
+#alert-text {
+	top: 20px;
+	left: 25%;
+	position: absolute;
+	width: 50%;
+	z-index: 99;
+}
+
+#code {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 300px;
+	left: 0;
+}
+
+.alert-dismissable .cog, .alert-dismissible .cog {
+	position: absolute;
+	right: 21px;
+}
+
+.filter a:hover {
+	cursor: pointer;
+}
+
+body {
+	min-height: 100%;
+}
+
+footer {
+	background-color: #f8f8f8;
+	bottom: 0;
+	position: fixed;
+	padding: 10px;
+	width: 100%
+}
+
+.panel_title {
+	position: absolute;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: -26px;
+	background-color: #fff;
+}
