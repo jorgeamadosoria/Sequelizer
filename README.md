@@ -14,5 +14,6 @@ This app uses:
 - Obviously Maven :)
 - JQuery on the client side: So, ok, I'm a backend dev, so I'm not big on the new Javascript frameworks. I decided to interact with the Rest endpoints exposed by Spring Data Rest by merely using a collection of jquery functions rather than a full flow in a stablished JS framework. I tried to get it working in an understandable way for me.
 - Bootstrap, Font Awesome and Font Awesome animation.
+- Ace Editor for SQL code.
 
 
