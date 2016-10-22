@@ -12,7 +12,7 @@ This app uses:
 - mysql to store the sql jobs configuration. This is not really necessary and any other database will do, specially since the persistence layer uses JPA which can generate the schema in a plethora of other DBMS.
 - Spring Data Rest, which entails the usual suspects: Spring Boot, JPA, Jersey, Thymeleaf, and others as configured by Boot.
 - Obviously Maven :)
-- Jquery on the client side: So, ok, I'm a backend dev, so I'm not big on the new Javascript frameworks. So I decided to interact with the Rest endpoints exposed by Spring Data Rest by merely using a collection of jquery functions rather than a full flow in a stablished JS framework. I tried to get it working in an understandable way for me.
+- JQuery on the client side: So, ok, I'm a backend dev, so I'm not big on the new Javascript frameworks. I decided to interact with the Rest endpoints exposed by Spring Data Rest by merely using a collection of jquery functions rather than a full flow in a stablished JS framework. I tried to get it working in an understandable way for me.
 - Bootstrap, Font Awesome and Font Awesome animation.
 
 
