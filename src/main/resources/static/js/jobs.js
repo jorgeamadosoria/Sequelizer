@@ -43,27 +43,19 @@ function addRow(row, obj) {
 					url : "actions/sqljobs/execute/" + $(this).data("id"),
 					method : "GET",
 					beforeSend : function(xhr) {
-						$("#alert-text").remove();
-						$("body").prepend(
-								alertInfo("Executing "
-										+ $(row).find("#name").text()));
+						$.noty.closeAll();
+						alertInfo("Executing " + $(row).find("#name").text());
 					},
 					success : function(data) {
 						$(row).find("#lastExecutionDate").text(
 								moment.utc(data.date).fromNow());
-						$("#alert-text").remove();
-						$("body").prepend(
-								alertSuccess($(row).find("#name").text()
-										+ ":&nbsp;" + data.message
-										+ "&nbsp;rows queried."));
+						alertSuccess($(row).find("#name").text() + ":&nbsp;"
+								+ data.message + "&nbsp;rows queried.");
 					},
 					error : function(data) {
-						$("#alert-text").remove();
-						$("body")
-								.prepend(
-										alertDanger($(row).find("#name").text()
-												+ ":&nbsp;"
-												+ data.responseJSON.message));
+						alertError($(row).find("#name").text() + ":&nbsp;"
+								+ data.responseJSON.message)
+						s;
 					}
 				});
 			});
@@ -74,27 +66,19 @@ function addRow(row, obj) {
 					url : "actions/sqljobs/count/" + $(this).data("id"),
 					method : "GET",
 					beforeSend : function(xhr) {
-						$("#alert-text").remove();
-						$("body").prepend(
-								alertInfo("Counting "
-										+ $(row).find("#name").text()));
+						$.noty.closeAll();
+						alertInfo("Counting " + $(row).find("#name").text());
 					},
 					success : function(data) {
 						$(row).find("#lastExecutionDate").text(
 								moment.utc(data.date).fromNow());
-						$("#alert-text").remove();
-						$("body").prepend(
-								alertSuccess($(row).find("#name").text()
-										+ ":&nbsp;" + data.message
-										+ "&nbsp;rows in result."));
+
+						alertSuccess($(row).find("#name").text() + ":&nbsp;"
+								+ data.message + "&nbsp;rows in result.");
 					},
 					error : function(data) {
-						$("#alert-text").remove();
-						$("body")
-								.prepend(
-										alertDanger($(row).find("#name").text()
-												+ ":&nbsp;"
-												+ data.responseJSON.message));
+						alertError($(row).find("#name").text() + ":&nbsp;"
+								+ data.responseJSON.message);
 					}
 				});
 			});

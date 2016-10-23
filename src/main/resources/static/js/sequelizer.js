@@ -1,3 +1,5 @@
+var n = null;
+
 $.extend({
 	getUrlVars : function() {
 		var vars = [], hash;
@@ -35,10 +37,8 @@ function initList(collection, addRowCallback) {
 				var row = $("thead #model_row").clone();
 				$(row).removeClass("hidden");
 				$(row).attr("id", "");
-				$(row).find("a#edit-link").attr(
-						"href",
-						"upsert.html?id="
-								+ data._embedded[collection][i].id);
+				$(row).find("a#edit-link").attr("href",
+						"upsert.html?id=" + data._embedded[collection][i].id);
 				$(row).find("a#download-link").attr(
 						"href",
 						svnBase + data._embedded[collection][i].project + "/"
@@ -158,18 +158,30 @@ function initUpsert(coll, getEntityCallback) {
 	});
 }
 
+function baseAlert(text, type) {
+
+	noty({
+		text : text,
+		type : type,
+		theme : 'relax',
+		layout : 'topRight',
+		closeWith : [ 'click' ],
+		maxVisible : 10,
+		animation : {
+			open : 'animated fadeInRight',
+			close : 'animated fadeOutLeft',
+		}
+	});
+}
+
 function alertInfo(text) {
-	return "<div id='alert-text' class='alert alert-info fade in alert-dismissible row' role='alert'>"
-			+ text + "<i class='cog fa fa-cog faa-spin animated'></i></div>";
+	baseAlert("<i class='cog fa fa-cog faa-spin animated'></i>&nbsp;&nbsp;"+ text,
+			"information");
 }
 
 function alertSuccess(text) {
-	return "<div id='alert-text' class='alert alert-success fade in alert-dismissible row' role='alert'>"
-			+ text
-			+ "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>&times;</button></div>";
+	baseAlert(text, "success");
 }
-function alertDanger(text) {
-	return "<div id='alert-text' class='alert alert-danger fade in alert-dismissible row' role='alert'>"
-			+ text
-			+ "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>&times;</button></div>";
+function alertError(text) {
+	baseAlert(text, "error");
 }
